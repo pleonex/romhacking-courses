@@ -172,12 +172,49 @@
 \end{frame}
 
 \begin{frame}{¿Qué hay dentro de un juego?}
+    \fontsize{45}{0}\selectfont
+    \begin{columns}
+    \begin{column}{0.65\textwidth}
+        ¿ \includegraphics{gamefile.png}~?
+        \visible<2->{\textrightarrow}
+    \end{column}
+    \hfill
+    \begin{column}{0.35\textwidth}
+        \visible<2->{\includegraphics[width=\textwidth]{game_desmume.png}}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{La parte cruda de un juego}
+    \includegraphics[width=\textwidth]{game_hex.png}
 \end{frame}
 
 \begin{frame}{¿Y ahora? ¿Y la especificación?}
 \end{frame}
 
-\begin{frame}{This is ROM Hacking!}
+\begin{frame}{ROM Hacking}
+    \includegraphics[width=\textwidth]{this_is_romhacking.png}
+\end{frame}
+
+\begin{frame}{ROM Hacking}
+    \begin{columns}
+    \begin{column}{0.35\textwidth}
+        Objetivos:
+        \begin{itemize}
+            \item<2-> Fan traducciones
+            \item<3-> Mods
+            \item<4-> Extraer recursos
+            \item<5-> Curiosidad
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.65\textwidth}
+        \centering
+        \visible<2->{\includegraphics[width=0.45\textwidth]{ninokuni_preview.jpg}}
+        \visible<3->{\includegraphics[width=0.45\textwidth]{mods_preview.jpg}}
+        \visible<4->{\includegraphics[width=0.4\textwidth]{spriters.png}}
+        \visible<5->{\includegraphics[width=0.8\textwidth]{tinke_preview.png}}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \subsection{TOC}
@@ -185,12 +222,12 @@
     \centering
     \textbf{Introducción al ROM Hacking}
     \begin{enumerate}
-        \item Edita tu primer videojuego
+        \item<+-> Edita tu primer videojuego
         \begin{enumerate}
             \item ¿Qué es ROM Hacking?
             \item Modifica un videojuego
         \end{enumerate}
-        \item Formatos estándar en Nintendo DS
+        \item<+-> Formatos estándar en Nintendo DS
         \begin{enumerate}
             \item Textos
             \item Compresiones
@@ -199,7 +236,7 @@
             \item Audios
             \item Modelos 3D
         \end{enumerate}
-        \item Programas de edición de ficheros
+        \item<+-> Programas de edición de ficheros
         \begin{enumerate}
             \item Crystal Tile
             \item New Super Mario Bros Level Editor
@@ -214,30 +251,29 @@
 \begin{frame}{¡Proyecto!}
     \Large
     \begin{wideitemize}
-        \item Grupos de infinitas personas
-        \item Traducción, edición, \textit{dumpeo}
-        \item Trasversal al curso.
+        \item<+-> Grupos de infinitas personas
+        \item<+-> Traducción, edición, extraer recursos, \ldots
+        \item<+-> Desde ya.
     \end{wideitemize}
 \end{frame}
 
 \begin{frame}{Futuros cursos}
     \begin{columns}
     \begin{column}{0.5\textwidth}
-        \textbf{Desarrollo de herramientas de ROM Hacking}
+        \uncover<2->{\textbf{Desarrollo de herramientas de ROM Hacking}
         \begin{enumerate}
             \item Crear plugins para Tinke y Libgame.
             \item Crear programas editores de script, imágenes, \ldots
-        \end{enumerate}
+        \end{enumerate}}
     \end{column}
     \hfill
     \begin{column}{0.5\textwidth}
-        \textbf{ROM Hacking sobre ensamblador}
+        \uncover<3->{\textbf{ROM Hacking sobre ensamblador}
         \begin{enumerate}
             \item Aprender ensamblador
             \item Depurar juegos
             \item Modificar el código fuente de juegos
-        \end{enumerate}
+        \end{enumerate}}
     \end{column}
     \end{columns}
-
 \end{frame}
