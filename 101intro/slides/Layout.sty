@@ -20,9 +20,9 @@
 {\enditemize}
 
 % A graphic with caption
-\newcommand{\includefigure}[2]{%
+\newcommand{\includefigure}[3]{%
     \begin{figure}
-        \includegraphics[width=\textwidth,keepaspectratio]{#2}
+        \includegraphics[width=#3\textwidth,keepaspectratio]{#2}
         \caption{\footnotesize#1}
     \end{figure}
 }

@@ -6,7 +6,7 @@
     \begin{column}{0.75\textwidth}
         \Large
         Benito Palacios Sánchez \\
-        \textbf{pleonex}
+        \textbf{@pleonex}
     \end{column}
     \begin{column}{0.25\textwidth}
         \includegraphics[width=\textwidth]{../pleonex.png}
@@ -19,18 +19,22 @@
         \item Graduado en Ingeniería de Tecnologías de Telecomunicación
         \item Miembro de la Rama Estudiantil de IEEE para la UGR
         \item > 6 años en el mundo del ROM Hacking
+        \item Miembro de GradienWords
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Mis proyectos}
     \setlength{\leftmargini}{0em}
     \begin{columns}
-    \begin{column}{0.4\textwidth}
-        \Large Tinke
+    \begin{column}[T]{0.5\textwidth}
+        \large \centering
+        Tinke
         \includegraphics[width=\textwidth]{tinke_preview.png}
     \end{column}
-    \begin{column}{0.6\textwidth}
-        \Large Ninokuni \\ El Mago de las Tinieblas
+    \begin{column}[T]{0.65\textwidth}
+        \large \centering
+        Ninokuni: El Mago de las Tinieblas \\
+        \includegraphics[width=0.5\textwidth]{ninokuni_preview.jpg}
     \end{column}
     \end{columns}
 
@@ -38,19 +42,19 @@
     \small
     \begin{columns}
     \begin{column}{0.3\textwidth}
-        Libgame \\
-        NinoImager \\
-        NerdFontTerminatoR
-    \end{column}
-    \begin{column}{0.3\textwidth}
-        Modime \\
         NinoDrive \\
-        Sadler
+        NinoImager \\
+        NinoDecompiler
     \end{column}
     \begin{column}{0.3\textwidth}
         NinoPatcher \\
         Zerum \\
-        NinoDecompiler
+        Sadler
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        Modime \\
+        NitroDebugger \\
+        NerdFontTerminatoR
     \end{column}
     \end{columns}
 
@@ -58,46 +62,113 @@
     \begin{columns}
     \begin{column}{0.5\textwidth}
         Final Fantasy: Four Heroes \\
-        Bahamut \\
+        Blood of Bahamut \\
         Profesor Layton: London Life \\
-        AAI
+        Ace Attorney Investigation 2
     \end{column}
     \begin{column}{0.5\textwidth}
-        Shinning Force Feather \\
-        Pokemon Conquest \\
-        Inazuma Eleven 2 y 3 \\
-        Hetalia
+        Shining Force Feather \\
+        Pokémon Conquest \\
+        Inazuma Eleven 2 \\
+        Resident Evil 2
     \end{column}
     \end{columns}
 \end{frame}
 
-\subsection{El Big-Bang}
+\subsection{El Big Bang}
 \begin{frame}{Érase una vez\ldots}
-    \huge \centering
-    La pregunta maldita
+    \centering \includegraphics[width=0.65\textwidth]{bigbang.png}
 \end{frame}
 
 \begin{frame}{¿Qué es un fichero?}
-    \centering
-    % TODO: Añadir foto de un fichero sin extension.
-    \Huge ¿?
+    \centering\fontsize{80}{0}\selectfont
+    ¿ \includegraphics{file.png}~?
     \note<1>{Un fichero es simplemente un conjunto de bytes con significado.}
 \end{frame}
 
 \begin{frame}[t]{¿Qué hay dentro de un fichero?}
     \huge\centering
     ¿Qué hay para que veamos\ldots \\
-    imágenes? \\
-    vídeos? \\
-    música? \\
+    \ldots imágenes? \\
+    \ldots vídeos? \\
+    \ldots música? \\
     \vfill
     ¿Cómo lo vemos eso?
 \end{frame}
 
 \begin{frame}{La parte cruda de los archivos}
+    \includefigure{Imagen vista con editor hexadecimal HxD}{hexview.png}{0.6}
 \end{frame}
 
-\begin{frame}{Especificaciones}
+\begin{frame}[fragile]{Especificaciones (BMP)}
+    \footnotesize
+    \ctable[]{ccl}{}{                                                       \FL
+        Posición      & Tamaño        & Descripción                         \ML
+        \multicolumn{3}{c}{Cabecera estándar}                               \NN
+        \texttt{0x00} & \texttt{0x02} & \textit{Magic stamp}: \texttt{BM}   \NN
+        \texttt{0x02} & \texttt{0x04} & Tamaño del fichero                  \NN
+        \texttt{0x06} & \texttt{0x04} & Reservado                           \NN
+        \texttt{0x0A} & \texttt{0x04} & Puntero a los datos de la imagen    \ML
+        \multicolumn{3}{c}{Cabecera DIB}                                    \NN
+        \texttt{0x00} & \texttt{0x04} & Tamaño de esta cabecera             \NN
+        \texttt{0x04} & \texttt{0x04} & Ancho de la imagen                  \NN
+        \texttt{0x06} & \texttt{0x04} & Alto de la imagen                   \NN
+        \texttt{0x08} & \texttt{0x02} & Número de planos de color (1)       \NN
+        \texttt{0x0A} & \texttt{0x02} & Número de bits por píxel            \ML
+        \multicolumn{3}{c}{Paleta de colores}                               \ML
+        \multicolumn{3}{c}{Píxeles}                                         \LL
+    }
+\end{frame}
+
+\begin{frame}{Especificaciones (BMP)}
+    \begin{columns}
+    \begin{column}[T]{0.7\textwidth}
+        \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=\textwidth]{hexview.png}};
+            \begin{scope}[x={(image.south east)},y={(image.north west)}]
+                \draw<1,6->[red,semithick] (0.15,0.785) rectangle (0.64,0.76);
+                \draw<2-5>[red,semithick] (0.15,0.76) rectangle (0.22,0.785);
+                \draw<3-5>[red,semithick] (0.22,0.76) rectangle (0.36,0.785);
+                \draw<4-5>[red,semithick] (0.36,0.76) rectangle (0.50,0.785);
+                \draw<5>[red,semithick] (0.50,0.76) rectangle (0.64,0.785);
+                \draw<6,13->[green,semithick] (0.64,0.76) -- (0.64,0.785) -- (0.72,0.785) -- (0.72,0.605) -- (0.50,0.605) -- (0.50,0.58) -- (0.15,0.58) -- (0.15,0.76) -- (0.64,0.76);
+                \draw<7-12>[green,semithick] (0.72,0.76) -- (0.64,0.76) -- (0.64,0.785) -- (0.72,0.785);
+                \draw<7-12>[green,semithick] (0.15,0.76) -- (0.22,0.76) -- (0.22,0.735) -- (0.15,0.735);
+                \draw<8-12>[green,semithick] (0.22,0.735) rectangle (0.36,0.76);
+                \draw<9-12>[green,semithick] (0.36,0.735) rectangle (0.50,0.76);
+                \draw<10-12>[green,semithick] (0.50,0.735) rectangle (0.57,0.76);
+                \draw<11-12>[green,semithick] (0.57,0.735) rectangle (0.64,0.76);
+                \draw<12>[green,semithick] (0.64,0.735) -- (0.64,0.76) -- (0.72,0.76) -- (0.72,0.605) -- (0.50,0.605) -- (0.50,0.58) -- (0.15,0.58) -- (0.15,0.735) -- (0.64,0.735);
+                \draw<13->[blue,semithick] (0.15,0.12) -- (0.15,0.58) -- (0.50,0.58) -- (0.50,0.605) -- (0.72,0.605) -- (0.72, 0.145) -- (0.50,0.145) -- (0.50,0.12) -- (0.15,0.12);
+                \draw<14->[black,semithick] (0.15,0.04) -- (0.15,0.12) -- (0.50,0.12) -- (0.50,0.145) -- (0.72,0.145) -- (0.72,0.04) ;
+            \end{scope}
+        \end{tikzpicture}
+    \end{column}
+    \hfill
+    \begin{column}[T]{0.4\textwidth}
+        \begin{enumerate}
+            \item<1-> Cabecera estándar
+            \begin{enumerate}
+                \item<2-> \textit{Magic stamp}
+                \item<3-> Tamaño fichero
+                \item<4-> Reservado
+                \item<5-> Puntero datos
+            \end{enumerate}
+            \item<6-> Cabecera DIB
+            \begin{enumerate}
+                \item<7-> Tamaño DIB
+                \item<8-> Ancho
+                \item<9-> Alto
+                \item<10-> Planos de color
+                \item<11-> BPP
+                \item<12-> Metadatos
+            \end{enumerate}
+            \item<13-> Paleta
+            \item<14-> Píxeles
+        \end{enumerate}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{¿Qué hay dentro de un juego?}
