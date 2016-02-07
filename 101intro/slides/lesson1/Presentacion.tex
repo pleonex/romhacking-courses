@@ -16,10 +16,10 @@
     \vfill
     \setlength{\leftmargini}{0em}
     \begin{itemize}
-        \item Graduado en Ingeniería de Tecnologías de Telecomunicación
-        \item Miembro de la Rama Estudiantil de IEEE para la UGR
-        \item > 6 años en el mundo del ROM Hacking
-        \item Miembro de GradienWords
+        \item<2-> Graduado en Ingeniería de Tecnologías de Telecomunicación
+        \item<3-> Miembro de la IEEE Student Branch of Granada
+        \item<4-> \textgreater 6 años en el mundo del ROM Hacking
+        \item<5-> Miembro de GradienWords
     \end{itemize}
 \end{frame}
 
@@ -33,8 +33,8 @@
     \end{column}
     \begin{column}[T]{0.65\textwidth}
         \large \centering
-        Ninokuni: El Mago de las Tinieblas \\
-        \includegraphics[width=0.5\textwidth]{ninokuni_preview.jpg}
+        \uncover<2->{Ninokuni: El Mago de las Tinieblas}
+        \visible<2->{\includegraphics[width=0.5\textwidth]{ninokuni_preview.jpg}}
     \end{column}
     \end{columns}
 
@@ -42,42 +42,42 @@
     \small
     \begin{columns}
     \begin{column}{0.3\textwidth}
-        NinoDrive \\
-        NinoImager \\
-        NinoDecompiler
+        \uncover<3->{NinoDrive \\}
+        \uncover<3->{NinoImager \\}
+        \uncover<3->{NinoDecompiler}
     \end{column}
     \begin{column}{0.3\textwidth}
-        NinoPatcher \\
-        Zerum \\
-        Sadler
+        \uncover<3->{NinoPatcher \\}
+        \uncover<3->{Zerum \\}
+        \uncover<3->{NerdFontTerminatoR}
     \end{column}
     \begin{column}{0.3\textwidth}
-        Modime \\
-        NitroDebugger \\
-        NerdFontTerminatoR
+        \uncover<3->{Modime \\}
+        \uncover<3->{NitroDebugger \\}
+        \uncover<3->{Sadler}
     \end{column}
     \end{columns}
 
     \vfill
     \begin{columns}
     \begin{column}{0.5\textwidth}
-        Final Fantasy: Four Heroes \\
-        Blood of Bahamut \\
-        Profesor Layton: London Life \\
-        Ace Attorney Investigation 2
+        \uncover<4->{Final Fantasy: Four Heroes \\}
+        \uncover<4->{Blood of Bahamut \\}
+        \uncover<4->{Profesor Layton: London Life \\}
+        \uncover<4->{Ace Attorney Investigation 2}
     \end{column}
     \begin{column}{0.5\textwidth}
-        Shining Force Feather \\
-        Pokémon Conquest \\
-        Inazuma Eleven 2 \\
-        Resident Evil 2
+        \uncover<4->{Shining Force Feather \\}
+        \uncover<4->{Pokémon Conquest \\}
+        \uncover<4->{Inazuma Eleven 2 \\}
+        \uncover<4->{Resident Evil 2}
     \end{column}
     \end{columns}
 \end{frame}
 
 \subsection{El Big Bang}
 \begin{frame}{Érase una vez\ldots}
-    \centering \includegraphics[width=0.65\textwidth]{bigbang.png}
+    \visible<2->{\centering \includegraphics[width=0.65\textwidth]{bigbang.png}}
 \end{frame}
 
 \begin{frame}{¿Qué es un fichero?}
@@ -88,16 +88,16 @@
 
 \begin{frame}[t]{¿Qué hay dentro de un fichero?}
     \huge\centering
-    ¿Qué hay para que veamos\ldots \\
-    \ldots imágenes? \\
-    \ldots vídeos? \\
-    \ldots música? \\
+    \uncover<2->{¿Qué hay para que veamos\ldots \\}
+    \uncover<3->{\ldots imágenes? \\}
+    \uncover<4->{\ldots vídeos? \\}
+    \uncover<5->{\ldots música? \\}
     \vfill
-    ¿Cómo lo vemos eso?
+    \uncover<6->{¿Cómo lo vemos eso?}
 \end{frame}
 
 \begin{frame}{La parte cruda de los archivos}
-    \includefigure{Imagen vista con editor hexadecimal HxD}{hexview.png}{0.6}
+    \includefigure{BMP visto con editor hexadecimal HxD}{hexview.png}{0.6}
 \end{frame}
 
 \begin{frame}[fragile]{Especificaciones (BMP)}
