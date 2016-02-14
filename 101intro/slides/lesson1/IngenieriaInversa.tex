@@ -126,21 +126,86 @@
 \end{frame}
 
 \subsection{Editar juegos}
-\begin{frame}{Modificando texto}
-    % Juego: Layton
-    % Extraer archivo
-    % Editarlo con Notepad++ o Atom
-    % Importar archivo
-    % Generar ROM
-    % Probar en DeSmuME
+\begin{frame}{Modificando textos}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{enumerate}
+            \item<1-> Localizar texto a modificar
+            \item<2-> Abrir juego en Tinke
+            \item<3-> Localizar textos
+            \item<4-> Extraer archivo
+            \item<5-> Modificar con editor
+            \item<6-> Importar archivo
+            \item<7-> Generar ROM
+            \item<8-> Probar en DeSmuME
+        \end{enumerate}
+    \end{column}
+    \hfill
+    \begin{column}{0.5\textwidth}
+        \centering
+        \only<1>{\includegraphics[width=0.7\textwidth]{imgs/mod1.png}}
+        \only<2>{\includegraphics[width=\textwidth]{imgs/mod2.png}}
+        \only<3>{\includegraphics[width=\textwidth]{imgs/mod3.png}}
+        \only<4>{\includegraphics[width=\textwidth]{imgs/mod4.png}}
+        \only<5>{\includegraphics[width=\textwidth]{imgs/mod5.png}}
+        \only<6>{\includegraphics[width=\textwidth]{imgs/mod6.png}}
+        \only<7>{\includegraphics[width=\textwidth]{imgs/mod7.png}}
+        \only<8>{\includegraphics[width=0.7\textwidth]{imgs/mod8.png}}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \subsection{Distribuyamos los cambios}
 \begin{frame}{Legalidad}
+    \begin{block}{Ingeniería inversa en España}<+->
+        En España es legal siempre y cuando se cuente con una copia del producto original.
+    \end{block}
+    \begin{block}{Ingeniería inversa en EEUU}<+->
+        En EEUU la ley DMCA la prohíbe aunque hay juicios favorables de la Corte Suprema americana definiéndola como \textit{una parte esencial de la innovación}.
+    \end{block}
+    \begin{block}{ROM Hacking}<+->
+        De los cientos de traducciones y mods disponibles solo ha habido unos pocos C\&D.
+    \end{block}
 \end{frame}
 
 \begin{frame}{Parches}
+    \begin{columns}
+    \begin{column}{0.6\textwidth}
+        \small
+        \begin{wideitemize}
+            \item<1-> Solo contienen las modificaciones
+            \item<1-> \textbf{No subir el juego modificado}
+            \item<2-> Tamaño pequeño (entre 1 y 20 MB)
+            \item<3-> Formatos comunes: IPS y xDelta
+        \end{wideitemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{imgs/ninopatcher.png}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{xDelta}
+    \begin{columns}
+    \begin{column}{0.7\textwidth}
+        \footnotesize
+        \begin{wideitemize}
+            \item<1-> Windows: xdelta UI \\ \url{http://www.romhacking.net/utilities/598/}
+
+            \item<2-> Mac OS X: Multipatch \\ \url{http://projects.sappharad.com/tools/multipatch.html}
+
+            \item<3-> Linux: xdelta
+            \begin{itemize}
+                \footnotesize
+                \item Parchear: \\ \texttt{xdelta -d -s ORIGINAL PARCHE}
+                \item Crear parche: \\ \texttt{xdelta -9 -s ORIGINAL MODIFICADO PARCHE}
+            \end{itemize}
+        \end{wideitemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{imgs/xdelta_windows.png}
+        \vfill
+        \visible<2->{\includegraphics[width=\textwidth]{imgs/xdelta_mac.png}}
+    \end{column}
+    \end{columns}
 \end{frame}
