@@ -2,21 +2,40 @@
 \begin{frame}{Reto}
     \Huge\centering\textbf{CHALLENGE TIME!}
 \end{frame}
-%--- Next Frame ---%
 
 \subsection{Información de puzles}
 \begin{frame}{Objetivo}
+
+    {\Large\bfseries Crear un puzle}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item<1-> Título y localización
+            \item<2-> Descripción
+            \item<3-> Valor de \textit{picarats}
+            \item<4-> Pistas
+            \item<5-> Formato de entrada
+            \item<6-> Respuesta
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \only<1>{\includegraphics[width=0.7\textwidth]{imgs/reto1.png}}
+        \only<2,3>{\includegraphics[width=0.7\textwidth]{imgs/reto2.png}}
+        \only<4>{\includegraphics[width=0.7\textwidth]{imgs/reto3.png}}
+        \only<5>{\includegraphics[width=0.7\textwidth]{imgs/reto4.png}}
+        \only<6>{\includegraphics[width=0.7\textwidth]{imgs/reto5.png}}
+    \end{column}
+    \end{columns}
 \end{frame}
 
-\begin{frame}{Título de los puzles}
-\end{frame}
-
-\begin{frame}{Localización y tipo}
-\end{frame}
-
-\begin{frame}{Picarats}
-\end{frame}
-
-\subsection{Parámetros del puzle}
-\begin{frame}{Escribir número}
+\begin{frame}{Scripts}
+    \begin{itemize}
+        \visible<+->{\item Primeros 4 bytes es el tamaño del archivo}
+        \visible<+->{\item Se compone de múltiples comandos + argumentos}
+        \visible<+->{\item Despues de \texttt{0x0000} va el ID del comando}
+        \visible<+->{\item El formato de los argumentos es tipo + valor}
+        \visible<+->{\item El tipo \texttt{0x0001} es un entero de 32 bits}
+        \visible<+->{\item El tipo \texttt{0x0003} es una cadena de caracteres de longitud variable}
+        \visible<+->{\item Los scripts terminan con \texttt{0x000C}}
+    \end{itemize}
 \end{frame}
