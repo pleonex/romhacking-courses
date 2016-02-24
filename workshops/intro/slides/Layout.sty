@@ -64,8 +64,10 @@
 
 % Title page customized from Beamer2Thesis package. More info:
 % https://github.com/cfiandra/Beamer2Thesis/blob/master/latex/beamerinnerthemetorinoth.sty
+\setbeamercolor{palette white}{bg=white}
 \setbeamertemplate{title page}
 {
+   \begin{beamercolorbox}[wd=\paperwidth]{palette white}
    % University % Logo
    \begin{centering}
      % University
@@ -80,6 +82,7 @@
 
   \end{centering}
   \vskip0.25em
+  \end{beamercolorbox}
 
   % Title
   \begin{centering}
@@ -88,27 +91,27 @@
      \end{beamercolorbox}%
   \end{centering}
 
-  \vskip0.75em\par%
+  \vskip1.0em\par%
 
   % Author
   \begin{centering}
-      \vspace{\stretch{0.25}}%
-      \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center]{white}
-        \usebeamerfont{definition}\@authortitle
-      \end{beamercolorbox}
-
-      \begin{beamercolorbox}[ht=0.15\paperheight,sep=8pt,center]{white}
+      \vspace{\stretch{2}}%
+      \hfill{}
+      \begin{beamercolorbox}[wd=0.65\paperwidth,rounded=true,ht=0.10\paperheight,sep=2pt,center]{palette white}
         \usebeamerfont{person}\textbf{\textit{\insertauthor}} \\~ \@authoremail
       \end{beamercolorbox}
+      \hfill{}
       \vspace{\stretch{1}}%
   \end{centering}
   \vfill
 
   % Date
   \begin{centering}
-    \begin{beamercolorbox}[sep=8pt,center]{white}
+    \hfill{}
+    \begin{beamercolorbox}[wd=0.65\paperwidth,rounded=true,sep=2pt,center]{palette white}
       \usebeamerfont{date}\insertdate{}
     \end{beamercolorbox}
+    \hfill{}
   \end{centering}
   \vfill
 }
