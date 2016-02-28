@@ -41,20 +41,6 @@
     }}
 \end{frame}
 
-% Hide this slide, it's to complex to explain with no knowledge
-\begin{frame}<handout:0|beamer:0>{Números hexadecimales}
-    Operaciones a nivel de bits:
-    \small
-    \begin{itemize}
-        \item<3-> Filtrar/Máscaras:\\\texttt{0xAFC2 AND 0xF800 = 0xA800}
-        \item<4-> Formar valores:\\\texttt{0xB7000000 OR 0xCADB00 = 0xB70ADB00}
-        \item<5-> Cifrar:\\\texttt{0xCAFE XOR 0xAAAA = 0x6054, NOT 0xBEBE = 0x3501}
-        \item<6-> Desplazamientos:\\\texttt{0xC2 << 4 = 0xC20, 0xA800 >> 8 = 0xA8}
-    \end{itemize}
-    \visible<2->{\includegraphics[width=\textwidth]{imgs/bitop.png}}
-\end{frame}
-
-
 \begin{frame}{Endianness}
     \begin{block}{}
         Orden en el que se guardan los bytes que forman valores mayores a 8 bits (ushort, uint, ulong, \ldots). MSB \textrightarrow LSB.
@@ -96,9 +82,8 @@
 \end{frame}
 
 \begin{frame}{Tinke}
-    % Abrir tinke, acciones típicas y significado de iconos
-    \only<1>{\includefigure{Tinke}{imgs/tinke.png}{1}}
-    \only<2>{\includefigure{Interfaz}{imgs/tinke_preview.png}{1}}
+    \only<1>{\includegraphics[width=\textwidth]{imgs/tinke.png}}
+    \only<2>{\includegraphics[width=\textwidth]{imgs/tinke_preview.png}}
 \end{frame}
 
 \begin{frame}{Tipos de ficheros}
@@ -161,28 +146,16 @@
     \end{columns}
 \end{frame}
 
-\subsection{Distribuyamos los cambios}
-\begin{frame}{Legalidad}
-    \begin{block}{Ingeniería inversa en España}<+->
-        En España es legal siempre y cuando se cuente con una copia del producto original.
-    \end{block}
-    \begin{block}{Ingeniería inversa en EEUU}<+->
-        En EEUU la ley DMCA la prohíbe aunque hay juicios favorables de la Corte Suprema americana definiéndola como \textit{una parte esencial de la innovación}.
-    \end{block}
-    \begin{block}{ROM Hacking}<+->
-        De los cientos de traducciones y mods disponibles solo ha habido unos pocos C\&D.
-    \end{block}
-\end{frame}
-
+\subsection{Publicar cambios}
 \begin{frame}{Parches}
     \begin{columns}
     \begin{column}{0.6\textwidth}
         \small
         \begin{wideitemize}
             \item<1-> Solo contienen las modificaciones
-            \item<1-> \textbf{No subir el juego modificado}
-            \item<2-> Tamaño pequeño (entre 1 y 20 MB)
-            \item<3-> Formatos comunes: IPS y xDelta
+            \item<2-> \textbf{No subir el juego modificado}
+            \item<3-> Tamaño pequeño (entre 1 y 20 MB)
+            \item<4-> Formatos comunes: IPS y xDelta
         \end{wideitemize}
     \end{column}
     \begin{column}{0.4\textwidth}

@@ -12,7 +12,7 @@
     \end{column}
     \end{columns}
 
-    \vfill
+    \vfill{}
     \setlength{\leftmargini}{0em}
     \begin{itemize}
         \item<2-> Graduado en Ingeniería de Tecnologías de Telecomunicación
@@ -23,6 +23,9 @@
         \item<4-> \textgreater 6 años en el mundo del ROM Hacking
         \item<5-> Miembro de GradienWords
     \end{itemize}
+    \visible<5->{
+        \leavevmode\makebox(0,0){
+        \put(250, 75){\includegraphics[width=0.15\textwidth]{imgs/gradienwords.png}}}}
 \end{frame}
 
 \subsection{Mis proyectos}
@@ -78,7 +81,7 @@
     \end{columns}
 \end{frame}
 
-\subsection{El Big Bang}
+\subsection{¿Qué es ROM Hacking?}
 \begin{frame}{Érase una vez\ldots}
     \centering \includegraphics[width=0.65\textwidth]{imgs/bigbang.jpg}
 \end{frame}
@@ -176,12 +179,11 @@
 \begin{frame}{¿Qué hay dentro de un juego?}
     \fontsize{45}{0}\selectfont
     \begin{columns}
-    \begin{column}{0.65\textwidth}
+    \begin{column}{0.70\textwidth}
         ¿ \includegraphics{imgs/gamefile.png}~?
         \visible<2->{\textrightarrow}
     \end{column}
-    \hfill
-    \begin{column}{0.35\textwidth}
+    \begin{column}{0.30\textwidth}
         \visible<2->{\includegraphics[width=\textwidth]{imgs/game_desmume.png}}
     \end{column}
     \end{columns}
@@ -221,50 +223,25 @@
 \end{frame}
 
 \subsection{Temario}
-\begin{frame}{Contenido del curso}
+\begin{frame}[t]{Contenido del curso}
     \centering
-    \textbf{Introducción al ROM Hacking}
-
+    {\Large \textbf{Introducción al ROM Hacking}}
+    \vfill
+    \setlength{\leftmargini}{8em}
     \begin{enumerate}
-        \item<+-> Edita tu primer videojuego
+        \addtolength{\itemsep}{10pt}
+        \item<+-> Primeros pasos
         \begin{enumerate}
             \item ¿Qué es ROM Hacking?
-            \item Modifica un videojuego
+            \item Hello World!
+            \item Reto
         \end{enumerate}
-        \item<+-> Investigando formatos básicos
+        \item<+-> Formatos comunes en juegos
         \begin{enumerate}
-            \item Textos y tablas
-            \item Tipos de imágenes
-            \item Audios y tipografías
-        \end{enumerate}
-        \item<+-> Programas para modificar juegos
-        \begin{enumerate}
-            \item New Super Mario Bros Level Editor
-            \item Super Mario 64 DS Editor
-            \item Herramientas de Pokémon (GBA)
-            \item Herramientas de Ninokuni
-            \note<1>{TileMolester, DSLazy, CUE Compressors}
+            \item Textos
+            \item Imágenes
+            \item Tipografías y audios
+            \item Reto
         \end{enumerate}
     \end{enumerate}
-\end{frame}
-
-\begin{frame}<beamer:0|handout:0>{Futuros cursos}
-    \begin{columns}
-    \begin{column}{0.5\textwidth}
-        \uncover<2->{\textbf{Desarrollo de herramientas de ROM Hacking}
-        \begin{enumerate}
-            \item Crear plugins para Tinke y Libgame.
-            \item Crear programas editores de script, imágenes, \ldots
-        \end{enumerate}}
-    \end{column}
-    \hfill
-    \begin{column}{0.5\textwidth}
-        \uncover<3->{\textbf{ROM Hacking sobre ensamblador}
-        \begin{enumerate}
-            \item Aprender ensamblador
-            \item Depurar juegos
-            \item Modificar el código fuente de juegos
-        \end{enumerate}}
-    \end{column}
-    \end{columns}
 \end{frame}
