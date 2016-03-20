@@ -1,59 +1,105 @@
 \begin{frame}{Contenido}
     \begin{columns}
-    \begin{column}[T]{0.5\textwidth}
+    \begin{column}{0.5\textwidth}
         \uncover<2->{\large Textos}
         \begin{itemize}
             \item<2-> Codificaciones
             \item<2-> Formatos
         \end{itemize}
-        % TODO: Añadir imagen de diálogo de zelda.
+        \uncover<2->{Tipografías}
+        \visible<2->{\includegraphics[width=0.8\textwidth]{imgs/example_text.png}}
     \end{column}
     \hfill
-    \begin{column}[T]{0.5\textwidth}
+    \begin{column}{0.5\textwidth}
         \uncover<3->{\large Imágenes}
         \begin{itemize}
             \item<3-> Fondos
             \item<3-> Sprites
             \item<3-> Texturas
         \end{itemize}
-        % TODO: Añadir fondo de zelda.
-    \end{column}
-    \end{columns}
-
-    \begin{columns}
-    \begin{column}{0.5\textwidth}
-        \uncover<4->{Tipografías}
         \vfill{}
-        \uncover<5->{Audios}
-    \end{column}
-    \hfill
-    \begin{column}{0.5\textwidth}
-        % Añadir imagen de fuente de Zelda.
+        \visible<3->{\includegraphics[width=0.8\textwidth]{imgs/example_img.png}}
     \end{column}
     \end{columns}
 \end{frame}
 
 \section{Textos}
+\begin{frame}{Naturaleza del texto}
+    \centering\Large ¿Cómo guardamos texto de forma digital?
+    \includegraphics[width=0.75\textwidth]{imgs/example_text.png}
+\end{frame}
+
 \subsection{Codificaciones}
-\begin{frame}{ASCII}
-    % TODO: Add image of the table
+\begin{frame}{Codificación de caracteres}
+    \centering
+    \only<1>{
+        \begin{block}{}
+            Es el método que permite convertir un carácter de un lenguaje natural en un símbolo de otro sistema de representación aplicando reglas de codificación. [Wikipedia]
+        \end{block}
+    }
+    \only<2>{\includegraphics[width=\textwidth]{imgs/ascii-table.png}}
 \end{frame}
 
 \begin{frame}{ASCII}
-    % TODO: Add image of HxD
+    \begin{block}{}
+        \centering Codifica caracteres del alfabeto latino en 7 bits.
+    \end{block}
+    \begin{columns}
+    \begin{column}{0.40\textwidth}
+        \includegraphics[trim={1616px 0 0 0},clip,width=\textwidth]{imgs/ascii-table.png}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/text_hex.png} \\
+        \Huge \textdownarrow \\
+        \includegraphics[width=0.7\textwidth]{imgs/text_hex1.png}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Latin-1 (ISO 8859-1)}
+    \begin{block}{}
+        Codificación extendida de ASCII. Utiliza 8 bits añadiendo 128 caracteres necesarios para las lenguas europeas.
+    \end{block}
+    \centering\includegraphics[width=0.75\textwidth]{imgs/latin1.png}
+\end{frame}
+
+\begin{frame}{Unicode}
+    \begin{block}{}
+        Estándar universal de codificación de caracteres para la mayoría de lenguas (incluidas las muertas). La última version 6.0 incluye 109.449 caracteres.
+    \end{block}
+
+    \begin{itemize}
+        \item<2-> Unicode es solo una tabla, no especifica la codificación.
+        \item<3-> Codificaciones para unicode:
+        \begin{itemize}
+            \item<4-> UTF-8: codificación de 8 bits de longitud variable.\\ \texttt{'A' = 41h, '}\visible<4->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = F0 A0 9C 8E}
+            \item<5-> UTF-16: codificación de 16 bits de longitud variable. \\ \texttt{'A' = 0041, '}\visible<5->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = D841 DF0E}
+            \item<6-> UTF-32: codificación de 8 bits de longitud fija. \\ \texttt{'A' = 00000041, '}\visible<6->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = 0002070E}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Shift Jis (CP 932)}
+    \begin{block}{}
+        Codificación de longitud variable (1 o 2 bytes) para caracteres japoneses. Incluye ASCII.
+    \end{block}
+    \includefigure{Tabla para caracteres con primer byte \texttt{0x82}}{imgs/shiftjis_table82.png}{0.55}
+\end{frame}
+
+\begin{frame}{Ejemplos en archivos}
+    \centering\Large
+    \only<1>{¿? \\}
+    \only<2->{UTF-16 \\}
+    \includegraphics[width=0.75\textwidth]{imgs/utf16.png} \\
+    \only<3>{¿? \\}
+    \only<4->{Shift Jis \\}
+    \visible<3->{\includegraphics[width=0.75\textwidth]{imgs/shiftjis.png}}
 \end{frame}
 
 \begin{frame}{Caracteres no imprimibles}
     % \n, \r, \t and \0
     % Also in scripts to do things
-\end{frame}
-
-\begin{frame}{Latin-1}
-    % TODO: Add image of the table
-\end{frame}
-
-\begin{frame}{Shift-jis}
-    % TODO: Add image of text encoded in Shift-jis
 \end{frame}
 
 \begin{frame}{Tablas}
@@ -81,7 +127,28 @@
 \end{frame}
 
 \begin{frame}{Punteros (\textit{offsets})}
-    % TODO: Add image about BMG.
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=\textwidth]{imgs/pointers.png}};
+            \begin{scope}[x={(image.south east)},y={(image.north west)}]
+                \draw[black,thick] (0.775,0) -- (0.775,1);
+                \draw<2-4>[red,semithick] (0.13,0.9) rectangle (1,0.57);
+                \draw<2-4>[blue,semithick] (0.13,0.565) rectangle (1,0.0);
+                \draw<3,4>[blue,semithick] (0.13,0.565) rectangle (0.446,0.495);
+                \draw<4->[blue,line width=2pt,->] (0.446,0.65) -- (0.446,0.55);
+                \draw<5,6>[red,semithick] (0.13,0.81) rectangle (0.29,0.745);
+                \draw<6>[blue,semithick] (0.765,0.565) -- (0.53,0.565) -- (0.53,0.495) -- (0.765,0.495);
+                \draw<6>[blue,semithick] (1,0.565) -- (0.913,0.565) -- (0.913,0.495) -- (1,0.495);
+                \draw<6>[blue,semithick] (0.78,0.49) -- (0.835,0.49) -- (0.835,0.41) -- (0.78,0.41);
+                \draw<6>[blue,semithick] (0.13,0.49) -- (0.29,0.49) -- (0.29,0.41) -- (0.13,0.41);
+                \draw<7,8>[red,semithick] (0.45,0.81) rectangle (0.60,0.745);
+                \draw<8,9>[blue,semithick] (0.13, 0) -- (0.13, 0.4) -- (0.29, 0.4) -- (0.29,0.49) -- (0.765, 0.49) -- (0.765, 0);
+                \draw<8,9>[blue,semithick] (0.78, 0) -- (0.78, 0.4) -- (0.835, 0.4) -- (0.835, 0.49) -- (1, 0.49) -- (1, 0);
+                \draw<9>[green,semithick] (0.21, 0.49) rectangle (0.29, 0.4);
+                \draw<9>[green,semithick] (0.37, 0.4) rectangle (0.445, 0.32);
+                \draw<9>[green,semithick] (0.37, 0.24) rectangle (0.445, 0.16);
+            \end{scope}
+    \end{tikzpicture}
 \end{frame}
 
 \section{Imágenes}
