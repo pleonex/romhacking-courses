@@ -258,9 +258,103 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 \end{frame}
 
 \begin{frame}{Compresión}
+    \only<1>{
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=256px]{imgs/zelda_nintendo.png}};
+        \begin{scope}[x={(image.south east)},y={(image.north west)}]
+            \draw[help lines,xstep=8bp,ystep=8bp] (0,0) grid (1,1);
+        \end{scope}
+    \end{tikzpicture}
+    }
+    \only<2-4>{
+    \centering
+    \begin{columns}
+    \begin{column}{0.15\textwidth}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0)
+            {\includegraphics[width=48px]{imgs/zelda_nintendo_compress.png}};
+            \begin{scope}[x={(image.south east)},y={(image.north west)}]
+                \draw[help lines,xstep=8bp,ystep=8bp] (0,0) grid (1,1);
+            \end{scope}
+        \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+        \visible<3->{\huge +}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \visible<3->{\includegraphics[width=\textwidth]{imgs/screen_info.png}}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+        \visible<4->{\huge =}
+    \end{column}
+    \begin{column}{0.25\textwidth}
+        \visible<4->{\includegraphics[width=\textwidth]{imgs/zelda_nintendo.png}}
+    \end{column}
+    \end{columns}
+    }
+    \only<5->{
+    Compresión de \textit{tiles}:
+    \begin{itemize}
+        \item<5-> Evita guardar \textit{tiles} idénticos.
+        \item<6-> Evita guardar \textit{tiles volteados} horizontalmente o verticalmente.
+        \item<7-> Permite usar 256 colores distintos en formatos 4bpp.
+        \begin{itemize}
+            \item<8-> Cada \textit{tile} usa una paleta.
+        \end{itemize}
+    \end{itemize}
+    }
 \end{frame}
 
 \subsection{Sprites}
+\begin{frame}{Casos de uso}
+    \only<1-2>{
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \only<1>{\includegraphics[width=\textwidth]{imgs/zelda_title.png}}
+        \only<2>{\includegraphics[width=\textwidth]{imgs/zelda_title_cells.png}}
+    \end{column}
+    \hfill
+    \begin{column}{0.5\textwidth}
+        \centering
+        \only<1-2>{\includegraphics[width=30px]{imgs/zelda_anm-0.png}}
+        \only<2>{
+        \vfill{}
+        \includegraphics[width=30px]{imgs/zelda_anm-1.png}\hfill{}
+        \includegraphics[width=30px]{imgs/zelda_anm-2.png}\hfill{}
+        \includegraphics[width=30px]{imgs/zelda_anm-3.png}
+        }
+    \end{column}
+    \end{columns}
+    }
+
+    \only<3>{
+    \centering
+    \begin{columns}
+    \begin{column}{0.25\textwidth}
+        \includegraphics[width=\textwidth]{imgs/zelda_btn_base.png}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+        \huge +
+    \end{column}
+    \begin{column}{0.2\textwidth}
+        \includegraphics[width=\textwidth]{imgs/zelda_btn_text1.png}
+        \vspace{10pt}
+        \includegraphics[width=\textwidth]{imgs/zelda_btn_text2.png}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+        \huge =
+    \end{column}
+    \begin{column}{0.25\textwidth}
+        \includegraphics[width=\textwidth]{imgs/zelda_btn1.png}
+        \vspace{10pt}
+        \includegraphics[width=\textwidth]{imgs/zelda_btn2.png}
+    \end{column}
+    \end{columns}
+    }
+\end{frame}
+
 \begin{frame}{Formatos base}
 \end{frame}
 
