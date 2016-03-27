@@ -1,0 +1,17 @@
+Plugin.led.Led4 = 1
+Plugin.led.Led1 = 1
+Plugin.led.Battery = 1
+
+Wiimote.A       = BTN_LEFT
+Wiimote.B       = BTN_RIGHT
+
+Wiimote.Up      = KEY_UP
+Wiimote.Down    = KEY_DOWN
+Wiimote.Left    = KEY_LEFT
+Wiimote.Right   = KEY_RIGHT
+
+Wiimote.Minus   = KEY_J
+Wiimote.Plus    = KEY_K
+
+Wiimote.Home    = KEY_H
+Wiimote.1       = KEY_ESC
