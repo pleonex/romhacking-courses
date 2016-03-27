@@ -195,16 +195,54 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 \end{frame}
 
 \begin{frame}{Colores}
-
+    \begin{block}{}
+        Los colores se forman \textit{mezclando} los tres colores base (componentes / canal): \textbf{rojo}, \textbf{verde} y \textbf{azul}.
+    \end{block}
+    \begin{columns}
+    \begin{column}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/rgb.png}
+    \end{column}
+    \begin{column}{0.8\textwidth}
+        \small
+        \begin{itemize}
+            \item<2-> El rango de valores de cada componente define los colores únicos.
+            \item<3-> Generalmente: 8 bits/canal \\
+            $2^8=256\rightarrow 256^3=16.777.216$ colores únicos.
+            \item<4-> NDS: 5 bits (\texttt{BGR555}) $\rightarrow$ 32.768 colores únicos.
+            \begin{itemize}
+                \item<4-> Un color ocupa 16 bits:\\
+                5 por canal + 1 transparencia.
+            \end{itemize}
+        \end{itemize}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Paletas}
+    \begin{block}{}
+        Agrupación de colores. Definen los colores de una imagen. El primer color suele ser el transparente.
+    \end{block}
+    {\centering\includegraphics[width=0.25\textwidth]{imgs/zelda_pal.png}\\}
+    \uncover<2->{Modalidades:}
+    \begin{itemize}
+        \item<2-> 1 paleta de 256 colores = 256 colores.
+        \item<3-> 16 paletas de 16 colores = 256 colores.
+        \item<4-> 16 paletas de 256 colores = 4.096 colores.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Píxeles}
-\end{frame}
-
-\begin{frame}{Codificaciones}
+    \begin{block}{}
+        La información que guardamos por píxel es la posición en la paleta de su color.
+    \end{block}
+    {\centering\includegraphics[width=0.25\textwidth]{imgs/zelda_px.png}\\}
+    \uncover<2->{Codificaciones:}
+    \begin{itemize}
+        \item<2-> 8 bits por píxel (bpp): $2^8=256$ posiciones diferentes $\rightarrow$ 256 colores diferentes.
+        \item<3-> 4 bpp: 16 colores diferentes.
+        \item<4-> 1 bpp: 2 colores diferentes (blanco o negro).
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Agrupación de píxeles}
@@ -426,18 +464,17 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 
 \begin{frame}{Modelos 3D}
     \begin{columns}
-    \begin{column}{0.6\textwidth}
-        \only<1-2>{\includegraphics[width=\textwidth]{imgs/zelda_house.png}}
-        \only<3>{\includegraphics[width=\textwidth]{imgs/zelda_map.png}}
-    \end{column}
     \begin{column}{0.5\textwidth}
         \begin{wideitemize}
             \item<1-> Geometría 3D.
             \item<2-> Comandos de OpenGL 1.0.
         \end{wideitemize}
     \end{column}
+    \begin{column}{0.6\textwidth}
+        \only<1-2>{\includegraphics[width=\textwidth]{imgs/zelda_house.png}}
+        \only<3>{\includegraphics[width=\textwidth]{imgs/zelda_map.png}}
+    \end{column}
     \end{columns}
-
 \end{frame}
 
 \section{Tipografías y audios}
