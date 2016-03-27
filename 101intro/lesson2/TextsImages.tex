@@ -75,7 +75,7 @@
         \begin{itemize}
             \item<4-> UTF-8: codificación de 8 bits de longitud variable.\\ \texttt{'A' = 41h, '}\visible<4->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = F0 A0 9C 8E}
             \item<5-> UTF-16: codificación de 16 bits de longitud variable. \\ \texttt{'A' = 0041, '}\visible<5->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = D841 DF0E}
-            \item<6-> UTF-32: codificación de 8 bits de longitud fija. \\ \texttt{'A' = 00000041, '}\visible<6->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = 0002070E}
+            \item<6-> UTF-32: codificación de 32 bits de longitud fija. \\ \texttt{'A' = 00000041, '}\visible<6->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = 0002070E}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -224,7 +224,7 @@ Valor          & Carácter & Valor          & Carácter & Valor    & Carácter \
         Agrupación de colores. Definen los colores de una imagen. El primer color suele ser el transparente.
     \end{block}
     {\centering\includegraphics[width=0.25\textwidth]{imgs/zelda_pal.png}\\}
-    \uncover<2->{Modalidades:}
+    \uncover<2->{Modalidades del formato NCLR:}
     \begin{itemize}
         \item<2-> 1 paleta de 256 colores = 256 colores.
         \item<3-> 16 paletas de 16 colores = 256 colores.
@@ -237,7 +237,7 @@ Valor          & Carácter & Valor          & Carácter & Valor    & Carácter \
         La información que guardamos por píxel es la posición en la paleta de su color.
     \end{block}
     {\centering\includegraphics[width=0.25\textwidth]{imgs/zelda_px.png}\\}
-    \uncover<2->{Codificaciones:}
+    \uncover<2->{Codificaciones del formato NCGR:}
     \begin{itemize}
         \item<2-> 8 bits por píxel (bpp): $2^8=256$ posiciones diferentes $\rightarrow$ 256 colores diferentes.
         \item<3-> 4 bpp: 16 colores diferentes.
@@ -352,7 +352,7 @@ Valor          & Carácter & Valor          & Carácter & Valor    & Carácter \
     \end{columns}
     }
     \only<7->{
-    Compresión de \textit{tiles}:
+    Compresión de \textit{tiles} con el formato NSCR:
     \begin{itemize}
         \item<7-> Evita guardar \textit{tiles} idénticos.
         \item<8-> Evita guardar \textit{tiles volteados} horizontalmente o verticalmente.
@@ -463,6 +463,7 @@ Valor          & Carácter & Valor          & Carácter & Valor    & Carácter \
 \end{frame}
 
 \begin{frame}{Modelos 3D}
+    \centering{}Nitro MoDel (.nsbbmd) \\ \vspace{5pt}
     \begin{columns}
     \begin{column}{0.5\textwidth}
         \begin{wideitemize}
