@@ -66,12 +66,12 @@
 
 \begin{frame}{Unicode}
     \begin{block}{}
-        Estándar universal de codificación de caracteres para la mayoría de lenguas (incluidas las muertas). La última version 6.0 incluye 109.449 caracteres.
+        Estándar universal de codificación de caracteres para la mayoría de lenguas (incluidas las muertas). La última versión 6.0 incluye 109.449 caracteres.
     \end{block}
 
     \begin{itemize}
         \item<2-> Unicode es solo una tabla, no especifica la codificación.
-        \item<3-> Codificaciones para unicode:
+        \item<3-> Codificaciones para Unicode:
         \begin{itemize}
             \item<4-> UTF-8: codificación de 8 bits de longitud variable.\\ \texttt{'A' = 41h, '}\visible<4->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = F0 A0 9C 8E}
             \item<5-> UTF-16: codificación de 16 bits de longitud variable. \\ \texttt{'A' = 0041, '}\visible<5->{\includegraphics[height=7px]{imgs/rare_char.png}}\texttt{' = D841 DF0E}
@@ -109,7 +109,7 @@
 \begin{frame}[t,fragile]{Tablas}
     \includegraphics[width=\textwidth]{imgs/text_perla_trans.png}
     \footnotesize\ctable[]{cc|cc|cc}{}{                                     \FL
-Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
+Valor          & Carácter & Valor          & Carácter & Valor    & Carácter \ML
 \texttt{01A9h} & ¡        & \texttt{01ABh} & !        & \texttt{01ADh} & ,  \NN
 \texttt{01DEh} & \textit{SP} & \texttt{E000h} & \textit{NL} & \texttt{0152h} & E \NN
 \texttt{0132h} & H        & \texttt{013Ah} & P        & \texttt{013Eh} & T  \NN
@@ -487,7 +487,7 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
     \end{column}
     \begin{column}{0.6\textwidth}
         \begin{wideitemize}
-            \item<+-> Una imagen por caracter.
+            \item<+-> Una imagen por carácter.
             \item<+-> Mapeo binario $\leftrightarrow$ imagen.
             \item<+-> Tabla + Imágenes.
             \item<+-> Útil para reemplazo de caracteres.
