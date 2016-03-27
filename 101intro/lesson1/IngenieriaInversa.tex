@@ -3,6 +3,35 @@
     \Huge\centering\textbf{ROM HACKING TIME!}
 \end{frame}
 
+\subsection{NitroROM}
+\begin{frame}{Especificación de juegos de NDS}
+    \begin{block}{GBATEK}
+        \centering
+         Gameboy Advance / Nintendo DS / DSi - Technical Info \\
+         Trabajo de Martin Korth en el desarrollo de no\$gba.
+        \url{http://problemkaputt.de/gbatek.htm}
+    \end{block}
+    \vfill
+    \small
+    \begin{columns}
+    \begin{column}{0.3\textwidth}
+        \uncover<2->{Cabecera\\}
+        \uncover<3->{Binario ARM9\\}
+        \uncover<3->{Overlays ARM9}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \uncover<3->{Binario ARM7\\}
+        \uncover<3->{Overlays ARM7\\}
+        \uncover<4->{File Name Table}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \uncover<4->{File Allocation Table\\}
+        \uncover<5->{Banner\\}
+        \uncover<6->{Archivos}
+    \end{column}
+    \end{columns}
+\end{frame}
+
 \subsection{Conceptos}
 \begin{frame}[fragile]{Números hexadecimales}
     \begin{uncoverenv}<2->Decimal: 0 1 2 3 4 5 6 7 8 9
@@ -53,34 +82,6 @@
 \end{frame}
 
 \subsection{Investigando un juego}
-\begin{frame}{Especificación de juegos de NDS}
-    \begin{block}{GBATEK}
-        \centering
-         Gameboy Advance / Nintendo DS / DSi - Technical Info \\
-         Trabajo de Martin Korth en el desarrollo de no\$gba.
-        \url{http://problemkaputt.de/gbatek.htm}
-    \end{block}
-    \vfill
-    \small
-    \begin{columns}
-    \begin{column}{0.3\textwidth}
-        \uncover<2->{Cabecera\\}
-        \uncover<3->{Binario ARM9\\}
-        \uncover<3->{Overlays ARM9}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-        \uncover<3->{Binario ARM7\\}
-        \uncover<3->{Overlays ARM7\\}
-        \uncover<4->{File Name Table}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-        \uncover<4->{File Allocation Table\\}
-        \uncover<5->{Banner\\}
-        \uncover<6->{Archivos}
-    \end{column}
-    \end{columns}
-\end{frame}
-
 \begin{frame}{Tinke}
     \only<1>{\includegraphics[width=\textwidth]{imgs/tinke.png}}
     \only<2>{\includegraphics[width=\textwidth]{imgs/tinke_preview.png}}
