@@ -294,14 +294,34 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
     \end{column}
     \end{columns}
     }
-    \only<5->{
+    \only<5-6>{
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{imgs/map_ninokuni_mess.png}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+        \visible<6->{\huge$\rightarrow$}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \centering
+        \visible<6->{
+        \includegraphics[width=0.7\textwidth]{imgs/map_ninokuni_fix1.png} \\
+        \vspace{10pt}
+        \includegraphics[width=0.7\textwidth]{imgs/map_ninokuni_fix2.png}
+        }
+    \end{column}
+    \end{columns}
+    }
+    \only<7->{
     Compresión de \textit{tiles}:
     \begin{itemize}
-        \item<5-> Evita guardar \textit{tiles} idénticos.
-        \item<6-> Evita guardar \textit{tiles volteados} horizontalmente o verticalmente.
-        \item<7-> Permite usar 256 colores distintos en formatos 4bpp.
+        \item<7-> Evita guardar \textit{tiles} idénticos.
+        \item<8-> Evita guardar \textit{tiles volteados} horizontalmente o verticalmente.
+        \item<9-> Permite agrupar imágenes.
+        \item<10-> Permite usar 256 colores distintos en formatos 4bpp.
         \begin{itemize}
-            \item<8-> Cada \textit{tile} usa una paleta.
+            \item<11-> Cada \textit{tile} usa una paleta.
         \end{itemize}
     \end{itemize}
     }
@@ -363,40 +383,104 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 \begin{frame}{Formatos base}
     \begin{columns}
     \begin{column}{0.45\textwidth}
-        \centering{}Paleta (.nclr) \\ \vspace{5pt}
+        \centering{}Paleta \\ \vspace{5pt}
         \includegraphics[width=\textwidth]{imgs/zelda_title_pal.png}
     \end{column}
     \begin{column}{0.05\textwidth}
         \uncover<2>{\huge +}
     \end{column}
     \begin{column}{0.45\textwidth}
-        \centering{}\uncover<2>{\textit{Tiles} (.ncgr)} \\ \vspace{5pt}
+        \centering{}\uncover<2>{\textit{Tiles}} \\ \vspace{5pt}
         \visible<2>{\includegraphics[width=\textwidth]{imgs/zelda_title_px.png}}
     \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}{Celdas}
-    \centering{}Celdas (.ncer) \\ \vspace{5pt}
+    \centering{}Nitro CElls Resource (.ncer) \\ \vspace{5pt}
     \includegraphics[width=0.6\textwidth]{imgs/zelda_title_ui.png}
 \end{frame}
 
 \begin{frame}{Animaciones}
-    \centering{}Animación (.nanr) \\ \vspace{5pt}
+    \centering{}Nitro AnimatioN Resource (.nanr) \\ \vspace{5pt}
     \includegraphics[width=0.6\textwidth]{imgs/zelda_anm_ui.png}
 \end{frame}
 
 \subsection{3D}
 \begin{frame}{Texturas}
+    \centering{}Nitro TeXture (.nsbtx) \\ \vspace{5pt}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \only<1-3>{\includegraphics[width=\textwidth]{imgs/zelda_link_tex.png}}
+        \only<4>{\includegraphics[width=\textwidth]{imgs/zelda_house_tex.png}}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+        \begin{wideitemize}
+            \item<1-> Uso en modelos 3D
+            \item<2-> Paletas + \textit{Tiles}
+            \item<3-> Codificaciones: A3I5, A4I4, A5I3, 4x4 texel
+        \end{wideitemize}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Modelos 3D}
+    \begin{columns}
+    \begin{column}{0.6\textwidth}
+        \only<1-2>{\includegraphics[width=\textwidth]{imgs/zelda_house.png}}
+        \only<3>{\includegraphics[width=\textwidth]{imgs/zelda_map.png}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{wideitemize}
+            \item<1-> Geometría 3D.
+            \item<2-> Comandos de OpenGL 1.0.
+        \end{wideitemize}
+    \end{column}
+    \end{columns}
+
 \end{frame}
 
 \section{Tipografías y audios}
 \subsection{Tipografías y audios}
 \begin{frame}{Tipografías}
+    \centering{}Nitro FonT Resource (.nftr) \\ \vspace{5pt}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{imgs/zelda_font.png}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+        \begin{wideitemize}
+            \item<+-> Una imagen por caracter.
+            \item<+-> Mapeo binario $\leftrightarrow$ imagen.
+            \item<+-> Tabla + Imágenes.
+            \item<+-> Útil para reemplazo de caracteres.
+        \end{wideitemize}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Audios}
+    \centering{}Sound DATa (.sdat) \\ \vspace{5pt}
+    \begin{columns}
+    \begin{column}{0.6\textwidth}
+        \begin{wideitemize}
+            \item<+-> Sonido digitalizado (STRM).
+            \begin{itemize}
+                \item<+-> PCM, ADPCM, Procyon.
+                \item<+-> Mono y estéreo.
+                \item<+-> Sample format: 4 a 16 bits.
+                \item<+-> Sample rate: 16 KHz, 32 KHz.
+                \item<+-> Bucles.
+            \end{itemize}
+            \item<+-> Sonido sintetizado (SSEQ).
+            \begin{itemize}
+                \item<+-> Partitura: SSEQ.
+                \item<+-> Notas musicales: SBNK, SWAR.
+            \end{itemize}
+        \end{wideitemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{imgs/zelda_music.png}
+    \end{column}
+    \end{columns}
 \end{frame}
