@@ -309,17 +309,20 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 
 \subsection{Sprites}
 \begin{frame}{Casos de uso}
-    \only<1-2>{
+    \only<1-4>{
     \begin{columns}
     \begin{column}{0.5\textwidth}
+        \centering
+        \textbf{Capas} \\ \vspace{10pt}
         \only<1>{\includegraphics[width=\textwidth]{imgs/zelda_title.png}}
-        \only<2>{\includegraphics[width=\textwidth]{imgs/zelda_title_cells.png}}
+        \only<2->{\includegraphics[width=\textwidth]{imgs/zelda_title_cells.png}}
     \end{column}
     \hfill
     \begin{column}{0.5\textwidth}
         \centering
-        \only<1-2>{\includegraphics[width=30px]{imgs/zelda_anm-0.png}}
-        \only<2>{
+        \uncover<3->{\textbf{Animaciones}} \\ \vspace{10pt}
+        \visible<3->{\includegraphics[width=30px]{imgs/zelda_anm-0.png}}
+        \visible<4>{
         \vfill{}
         \includegraphics[width=30px]{imgs/zelda_anm-1.png}\hfill{}
         \includegraphics[width=30px]{imgs/zelda_anm-2.png}\hfill{}
@@ -329,8 +332,10 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
     \end{columns}
     }
 
-    \only<3>{
+    \only<5>{
     \centering
+    \textbf{Ahorro de espacio con capas}
+    \vfill{}
     \begin{columns}
     \begin{column}{0.25\textwidth}
         \includegraphics[width=\textwidth]{imgs/zelda_btn_base.png}
@@ -356,15 +361,29 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 \end{frame}
 
 \begin{frame}{Formatos base}
+    \begin{columns}
+    \begin{column}{0.45\textwidth}
+        \centering{}Paleta (.nclr) \\ \vspace{5pt}
+        \includegraphics[width=\textwidth]{imgs/zelda_title_pal.png}
+    \end{column}
+    \begin{column}{0.05\textwidth}
+        \uncover<2>{\huge +}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+        \centering{}\uncover<2>{\textit{Tiles} (.ncgr)} \\ \vspace{5pt}
+        \visible<2>{\includegraphics[width=\textwidth]{imgs/zelda_title_px.png}}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Celdas}
-\end{frame}
-
-\begin{frame}{Bancos}
+    \centering{}Celdas (.ncer) \\ \vspace{5pt}
+    \includegraphics[width=0.6\textwidth]{imgs/zelda_title_ui.png}
 \end{frame}
 
 \begin{frame}{Animaciones}
+    \centering{}Animación (.nanr) \\ \vspace{5pt}
+    \includegraphics[width=0.6\textwidth]{imgs/zelda_anm_ui.png}
 \end{frame}
 
 \subsection{3D}
@@ -374,10 +393,10 @@ Valor          & Caracter & Valor          & Caracter & Valor    & Caracter \ML
 \begin{frame}{Modelos 3D}
 \end{frame}
 
-\section{Extra}
+\section{Tipografías y audios}
 \subsection{Tipografías y audios}
 \begin{frame}{Tipografías}
 \end{frame}
 
-\begin{frame}{Formatos de audio}
+\begin{frame}{Audios}
 \end{frame}
