@@ -1,0 +1,26 @@
+{
+    "reto4.png": {
+        "contentType": "image/png", 
+        "content_son": {
+            "category": "asset", 
+            "course": "RH101", 
+            "name": "reto4.png", 
+            "org": "IEEExUGR", 
+            "revision": null, 
+            "run": "2016", 
+            "tag": "c4x"
+        }, 
+        "displayname": "reto4.png", 
+        "filename": "asset-v1:IEEExUGR+RH101+2016+type@asset+block@reto4.png", 
+        "import_path": null, 
+        "locked": false, 
+        "thumbnail_location": [
+            "c4x", 
+            "IEEExUGR", 
+            "RH101", 
+            "thumbnail", 
+            "reto4-png.jpg", 
+            null
+        ]
+    }
+}

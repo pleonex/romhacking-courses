@@ -1,0 +1,41 @@
+{
+    "course/course": {
+        "cert_html_view_enabled": true, 
+        "course_image": "reto4.png", 
+        "discussion_topics": {
+            "General": {
+                "id": "course"
+            }
+        }, 
+        "display_name": "Introducci\u00f3n al ROM Hacking", 
+        "invitation_only": true, 
+        "language": "es", 
+        "start": "2030-01-01T00:00:00Z", 
+        "tabs": [
+            {
+                "name": "Courseware", 
+                "type": "courseware"
+            }, 
+            {
+                "name": "Course Info", 
+                "type": "course_info"
+            }, 
+            {
+                "name": "Textbooks", 
+                "type": "textbooks"
+            }, 
+            {
+                "name": "Discussion", 
+                "type": "discussion"
+            }, 
+            {
+                "name": "Wiki", 
+                "type": "wiki"
+            }, 
+            {
+                "name": "Progress", 
+                "type": "progress"
+            }
+        ]
+    }
+}
