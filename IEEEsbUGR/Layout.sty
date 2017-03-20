@@ -1,0 +1,120 @@
+% Copyright (c) 2015 Benito Palacios Sánchez - All Rights Reserved.
+% Esta obra está licenciada bajo la Licencia Creative Commons Atribución 4.0
+% Internacional. Para ver una copia de esta licencia, visita
+% http://creativecommons.org/licenses/by/4.0/.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Layout}[2015/09/14 IEEE Presentation Layout Style]
+\RequirePackage[T1]{fontenc}        % Output font
+\RequirePackage[utf8]{inputenc}     % Input encoding
+
+% Remove navigation symbol at the bottom
+\setbeamertemplate{navigation symbols}{}
+
+% Overlay transparency
+\setbeamercovered{transparent}
+
+% A list with more vertical separation between elements
+\newenvironment<>{wideitemize}
+{\itemize\addtolength{\itemsep}{10pt}}
+{\enditemize}
+
+% A graphic with caption
+\newcommand{\includefigure}[3]{%
+    \begin{figure}
+        \includegraphics[width=#3\textwidth,keepaspectratio]{#2}
+        \caption{\footnotesize#1}
+    \end{figure}
+}
+
+% For backup / appendix slides
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+% For overlap images
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+% Add a footline, code copied from infolines outer theme
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.30\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\inserttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+% Define new variables
+\def\authortitle#1{\def\@authortitle{#1}}
+\def\authoremail#1{\def\@authoremail{#1}}
+\def\titlelogo#1{\def\@titlelogo{#1}}
+
+% Title page customized from Beamer2Thesis package. More info:
+% https://github.com/cfiandra/Beamer2Thesis/blob/master/latex/beamerinnerthemetorinoth.sty
+\setbeamercolor{palette white}{bg=white}
+\setbeamertemplate{title page}
+{
+   \begin{beamercolorbox}[wd=\paperwidth]{palette white}
+   % University % Logo
+   \begin{centering}
+     % University
+     \begin{beamercolorbox}[rounded=true,shadow=true,ht=2.5ex,wd=.89\paperwidth,sep=3pt,center]{palette primary}
+       \insertinstitute\par%
+     \end{beamercolorbox}
+     \vskip0.5em%
+
+    % Logo
+    \includegraphics[height=.2\paperheight]{\@titlelogo}
+    \vfill
+
+  \end{centering}
+  \vskip0.25em
+  \end{beamercolorbox}
+
+  % Title
+  \begin{centering}
+     \begin{beamercolorbox}[wd=\paperwidth,sep=8pt,center]{palette primary}
+       \usebeamerfont{title}\inserttitle:\\\insertsubtitle\par%
+     \end{beamercolorbox}%
+  \end{centering}
+
+  \vskip1.0em\par%
+
+  % Author
+  \begin{centering}
+      \vspace{\stretch{2}}%
+      \hfill{}
+      \begin{beamercolorbox}[wd=0.65\paperwidth,rounded=true,ht=0.10\paperheight,sep=2pt,center]{palette white}
+        \usebeamerfont{person}\textbf{\textit{\insertauthor}} \\~ \@authoremail
+      \end{beamercolorbox}
+      \hfill{}
+      \vspace{\stretch{1}}%
+  \end{centering}
+  \vfill
+
+  % Date
+  \begin{centering}
+    \hfill{}
+    \begin{beamercolorbox}[wd=0.65\paperwidth,rounded=true,sep=2pt,center]{palette white}
+      \usebeamerfont{date}\insertdate{}
+    \end{beamercolorbox}
+    \hfill{}
+  \end{centering}
+  \vfill
+}

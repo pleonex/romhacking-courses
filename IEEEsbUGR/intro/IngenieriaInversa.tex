@@ -1,0 +1,90 @@
+\section{Hello World!}
+\begin{frame}{Hello World!}
+    \Huge\centering\textbf{ROM HACKING TIME!}
+\end{frame}
+
+\subsection{Conceptos}
+\begin{frame}[fragile]{Números hexadecimales}
+    \begin{uncoverenv}<2->Decimal: 0 1 2 3 4 5 6 7 8 9
+    \begin{lstlisting}
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 ...\end{lstlisting}\end{uncoverenv}
+
+    \begin{uncoverenv}<3->Binario: 0 1
+    \begin{lstlisting}
+    0 1 10 11 100 101 110 111 1000 ...
+    0 1  2  3   4   5   6   7    8\end{lstlisting}\end{uncoverenv}
+
+    \begin{uncoverenv}<4->Octal: 0 1 2 3 4 5 6 7
+    \begin{lstlisting}
+    0 1 2 3 4 5 6 7 10 11 12 13 14 ...
+    0 1 2 3 4 5 6 7  8  9 10 11 12\end{lstlisting}\end{uncoverenv}
+
+    \begin{uncoverenv}<5->Hexadecimal: 0 1 2 3 4 5 6 7 8 9 A B C D E F
+    \begin{lstlisting}
+    0 1 2 3 4 5 6 7 8 9  A  B  C  D  E  F 10 11 12 ...
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18\end{lstlisting}\end{uncoverenv}
+\end{frame}
+
+\begin{frame}[fragile]{Números hexadecimales}
+    \begin{wideitemize}
+        \item<1-> Prefijo \texttt{0x} o sufijo \texttt{h} \\
+        \texttt{0xA, FBh, 0xCA, FEh}
+
+        \item<2-> Fácil representación de enteros:
+    \end{wideitemize}
+    \visible<2->{\footnotesize\ctable[]{cccccl}{}{                          \FL
+        \# & Rango & Ejemplo & Bytes & Bits & Otros nombres                 \ML
+        1 & \texttt{[0, 15]} & \texttt{0xC} & \textonehalf & 4 &            \NN
+        2 & \texttt{[0, 255]} & \texttt{0xC0} & 1 & 8 & byte                \NN
+        4 & \texttt{[0, 65,535]} & \texttt{0x0200} & 2 & 16 & ushort, WORD  \NN
+        8 & \texttt{[0, 4,294,967,295]} & \texttt{0xB7000000} & 4 & 32 & uint, DWORD \LL
+    }}
+\end{frame}
+
+\subsection{Editar juegos}
+\begin{frame}{Modificando textos}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{enumerate}
+            \item<1-> Localizar texto a modificar
+            \item<2-> Abrir juego en Tinke
+            \item<3-> Localizar textos
+            \item<4-> Extraer archivo
+            \item<5-> Modificar con editor
+            \item<6-> Importar archivo
+            \item<7-> Generar ROM
+            \item<8-> Probar en DeSmuME
+        \end{enumerate}
+    \end{column}
+    \hfill
+    \begin{column}{0.5\textwidth}
+        \centering
+        \only<1>{\includegraphics[width=0.7\textwidth]{imgs/mod1.png}}
+        \only<2>{\includegraphics[width=\textwidth]{imgs/mod2.png}}
+        \only<3>{\includegraphics[width=\textwidth]{imgs/mod3.png}}
+        \only<4>{\includegraphics[width=\textwidth]{imgs/mod4.png}}
+        \only<5>{\includegraphics[width=\textwidth]{imgs/mod5.png}}
+        \only<6>{\includegraphics[width=\textwidth]{imgs/mod6.png}}
+        \only<7>{\includegraphics[width=\textwidth]{imgs/mod7.png}}
+        \only<8>{\includegraphics[width=0.7\textwidth]{imgs/mod8.png}}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Publicar cambios}
+\begin{frame}{Parches}
+    \begin{columns}
+    \begin{column}{0.6\textwidth}
+        \small
+        \begin{wideitemize}
+            \item<1-> Solo contienen las modificaciones
+            \item<2-> \textbf{No subir el juego modificado}
+            \item<3-> Tamaño pequeño
+            \item<4-> Formatos comunes: xDelta
+        \end{wideitemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{imgs/ninopatcher.png}
+    \end{column}
+    \end{columns}
+\end{frame}

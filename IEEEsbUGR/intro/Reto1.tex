@@ -1,0 +1,36 @@
+\section{Reto 1}
+\begin{frame}{Reto 1}
+    \Huge\centering\textbf{CHALLENGE TIME!}
+\end{frame}
+
+\subsection{Puzles en Profesor Layton}
+\begin{frame}{Objetivo}
+
+    {\Large\bfseries Modifica un puzle}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item<1-> Descripción (\textit{qtext})
+            \item<2-> Pistas (\textit{qtext})
+            \item<3-> Solución (\textit{script/qscript})
+            \item<4-> Confirmación (\textit{qtext})
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \only<1>{\includegraphics[width=0.7\textwidth]{imgs/reto1_1.png}}
+        \only<2>{\includegraphics[width=0.7\textwidth]{imgs/reto1_2.png}}
+        \only<3>{\includegraphics[width=0.7\textwidth]{imgs/reto1_3.png}}
+        \only<4>{\includegraphics[width=0.7\textwidth]{imgs/reto1_4.png}}
+    \end{column}
+    \end{columns}
+
+    \note[itemize]{
+        \item Primeros 4 bytes es el tamaño del archivo
+        \item Se compone de múltiples comandos + argumentos
+        \item Después de \texttt{0x0000} va el ID del comando
+        \item El formato de los argumentos es tipo + valor
+        \item El tipo \texttt{0x0001} es un entero de 32 bits
+        \item El tipo \texttt{0x0003} es una cadena de caracteres de longitud variable
+        \item Los scripts terminan con \texttt{0x000C}
+    }
+\end{frame}

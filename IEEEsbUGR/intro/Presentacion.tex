@@ -1,0 +1,76 @@
+% Copyright (c) 2017 Benito Palacios Sánchez - All Rights Reserved.
+% Esta obra está licenciada bajo la Licencia Creative Commons Atribución 4.0
+% Internacional. Para ver una copia de esta licencia, visita
+% http://creativecommons.org/licenses/by/4.0/.
+
+% Template
+\documentclass[usenames,dvipsnames]{beamer}
+\pdfoutput=1
+
+% Notes. Uncomment to view the notes.
+%\setbeameroption{show notes}
+%\setbeamertemplate{note page}[plain]    % Remove the note page style
+
+% Load this package to allow load many big packages.
+\usepackage{etex}
+
+% Font
+\usepackage[T1]{fontenc}        % Output font
+\usepackage[utf8]{inputenc}     % Input encoding
+\usepackage[spanish]{babel}     % For Spanish texts
+\usepackage{FiraSans}           % For FiraSans beauty fonts
+
+% Theme
+\usetheme{Darmstadt}
+\usecolortheme{whale}
+
+% Other packages
+\usepackage{xcolor}             % For color in text
+\usepackage{url}                % For links
+\usepackage{pifont}             % For tick symbol
+\usepackage{graphicx}           % For graphics
+\usepackage{epstopdf}           % For EPS graphics in Windows
+\usepackage{multimedia}         % For media
+\usepackage{verbatim}           % For non-parsed text blocks
+\usepackage{tikz}               % To draw over images
+\usepackage{ctable}             % For tables
+\usepackage{textcomp}           % For text arrows.
+\usepackage{listings}           % For blocks of code
+\lstset{language=[Sharp]C,basicstyle=\scriptsize\ttfamily, keywordstyle=\scriptsize\color{blue}\ttfamily}
+
+% My package
+\usepackage{../Layout}
+
+% Information about author and document
+\title{Introducción al ROM Hacking}
+\subtitle{Primeros pasos}
+\date[Marzo de 2017]{24 de marzo de 2017}
+\author{Benito Palacios}
+\authortitle{}
+\authoremail{benito.palaciossanchez.es@ieee.org}
+\institute[IEEE SB UGR]{Rama estudiantil de IEEE en la UGR}
+\titlelogo{../logo.png}
+
+% Add a little logo in the corner of the slides
+\pgfdeclareimage[height=0.5cm]{logo-mini}{../logo_mini.png}
+\logo{\pgfuseimage{logo-mini}}
+
+\begin{document}
+
+    % Title page
+    {
+    \usebackgroundtemplate{
+        \includegraphics[width=\paperwidth]{../background.jpg}}
+    \begin{frame}[plain]
+        \titlepage{}
+    \end{frame}
+    }
+
+    % Content
+    \include{Introduccion}
+    \include{IngenieriaInversa}
+    \include{Reto1}
+    \include{TextsImages}
+    \include{Reto2}
+
+\end{document}
