@@ -220,22 +220,6 @@ Valor          & Carácter & Valor          & Carácter & Valor    & Carácter \
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Agrupación de píxeles}
-    \centering
-    \only<1,3>{
-    \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] (image) at (0,0)
-        {\includegraphics[width=256px]{imgs/example_img.png}};
-        \begin{scope}[x={(image.south east)},y={(image.north west)}]
-            \draw<3>[help lines,xstep=8bp,ystep=8bp] (0,0) grid (1,1);
-        \end{scope}
-    \end{tikzpicture}
-    }
-    \only<2>{
-    \includegraphics[width=\textwidth]{imgs/img_lineal.png}
-    }
-\end{frame}
-
 \begin{frame}{Compresión}
     \only<1>{
     \centering

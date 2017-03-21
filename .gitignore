@@ -11,3 +11,5 @@
 *.toc
 *.pdf
 *.vrb
+*.tex.bak
+*.synctex.gz(busy)
